@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aldivan Vieira de Souza — Analista de Dados</title>
+<meta name="description" content="Trajetória profissional de Aldivan Vieira de Souza: Analista de Dados com experiência em SQL Server, Power BI, ETL e indicadores.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    --bg: #EFEBE2;
+    --surface: #FFFFFF;
+    --surface-2: #F7F4EC;
+    --ink: #23292C;
+    --muted: #6B7178;
+    --accent: #2B6777;
+    --accent-soft: #DCE9EA;
+    --gold: #A9791F;
+    --gold-soft: #F1E6CC;
+    --line: #D9D3C4;
+    --danger: #A4453A;
+    --shadow: 0 1px 2px rgba(35,41,44,0.06), 0 8px 24px rgba(35,41,44,0.06);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #14181A;
+      --surface: #1D2224;
+      --surface-2: #20262A;
+      --ink: #E9E6DE;
+      --muted: #9AA0A6;
+      --accent: #6FB2C2;
+      --accent-soft: #23383C;
+      --gold: #D9B25E;
+      --gold-soft: #33291A;
+      --line: #333A3D;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181A;
+    --surface: #1D2224;
+    --surface-2: #20262A;
+    --ink: #E9E6DE;
+    --muted: #9AA0A6;
+    --accent: #6FB2C2;
+    --accent-soft: #23383C;
+    --gold: #D9B25E;
+    --gold-soft: #33291A;
+    --line: #333A3D;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  header.top {
+    margin-bottom: 36px;
+  }
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 2.1rem;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin: 0 0 28px;
+  }
+
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .kpi {
+    background: var(--surface);
+    padding: 16px 14px;
+  }
+  .kpi .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+  }
+  .kpi .lbl {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .link-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  .link-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .link-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .about {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 28px;
+    box-shadow: var(--shadow);
+  }
+  .about-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  .about-head-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .lang-toggle button {
+    background: var(--surface);
+    border: none;
+    font-family: inherit;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .about-head svg {
+    width: 16px; height: 16px;
+    color: var(--accent);
+  }
+  .about-head span {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: none;
+  }
+  .about p {
+    margin: 0 0 10px;
+    font-size: 0.94rem;
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .about-contact {
+    font-size: 0.88rem;
+    color: var(--accent);
+  }
+
+  .tabs {
+    display: flex;
+    gap: 6px;
+    margin: 28px 0 20px;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .tab {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding: 8px 4px 12px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+  }
+  .tab.active { color: var(--ink); font-weight: 500; }
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 22px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .entry {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 22px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .entry.tipo-formacao::before { background: var(--gold); }
+  .entry.tipo-curso::before { background: var(--muted); }
+  .entry.tipo-projeto::before { background: var(--ink); }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .entry-period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+  .entry-tipo {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .entry.tipo-formacao .entry-tipo { background: var(--gold-soft); color: var(--gold); }
+  .entry.tipo-curso .entry-tipo { background: var(--surface-2); color: var(--muted); }
+  .entry.tipo-projeto .entry-tipo { background: var(--ink); color: var(--surface); }
+
+  .entry-title {
+    font-weight: 600;
+    font-size: 1.02rem;
+    margin: 0 0 1px;
+  }
+  .entry-org {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 10px;
+  }
+  .entry-desc {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 0.92rem;
+  }
+  .entry-desc li { margin-bottom: 3px; }
+  .entry-desc:empty { display: none; }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .skill-chip {
+    font-size: 0.74rem;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 2px 9px;
+    border-radius: 20px;
+  }
+
+  .entry-actions {
+    display: flex;
+    gap: 14px;
+  }
+  .entry-actions button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0;
+  }
+  .entry-actions button:hover { color: var(--accent); }
+  .entry-actions button.del:hover { color: var(--danger); }
+
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 20px;
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    font-size: 0.92rem;
+  }
+
+  .add-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 14px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+  .add-btn:hover { background: var(--accent-soft); border-style: solid; }
+
+  dialog {
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    width: min(520px, 92vw);
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+  dialog::backdrop { background: rgba(20,24,26,0.45); }
+  .dialog-inner { padding: 24px; max-height: 82vh; overflow-y: auto; }
+  .dialog-inner h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 0 0 18px;
+  }
+  .field { margin-bottom: 14px; }
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.92rem;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface-2);
+    color: var(--ink);
+  }
+  .field textarea { resize: vertical; min-height: 70px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .checkline {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .checkline input { width: auto; }
+  .hint { font-size: 0.74rem; color: var(--muted); margin-top: 4px; }
+
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .btn {
+    font-family: inherit;
+    font-size: 0.88rem;
+    padding: 9px 16px;
+    border-radius: 7px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  footer.foot {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .reset-link {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 0.76rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Trajetória profissional</h1>
+    <p class="subtitle">Aldivan Vieira de Souza — Analista de Dados | BI | SQL | Power BI</p>
+    <div class="kpis">
+      <div class="kpi"><span class="num" id="kpiYears">–</span><span class="lbl">anos de experiência profissional</span></div>
+      <div class="kpi"><span class="num" id="kpiData">–</span><span class="lbl">anos de experiência com dados</span></div>
+      <div class="kpi"><span class="num" id="kpiOrgs">–</span><span class="lbl">empresas / instituições</span></div>
+      <div class="kpi"><span class="num" id="kpiSkills">–</span><span class="lbl">competências mapeadas</span></div>
+    </div>
+    <div class="links">
+      <a class="link-chip" href="https://www.linkedin.com/in/aldivan-vieira-de-souza" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+      <a class="link-chip" href="mailto:aldivan.vieira@yahoo.com.br">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M3 6l9 7 9-7M3 6v12h18V6H3z"/></svg>
+        aldivan.vieira@yahoo.com.br
+      </a>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="about-head">
+      <div class="about-head-left">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        <span>Sobre — LinkedIn</span>
+      </div>
+      <div class="lang-toggle" id="aboutLangToggle">
+        <button data-lang="pt" class="active">PT</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <div id="aboutContentPt">
+      <p>Profissional com sólida trajetória no setor público e privado. Comecei minha carreira como Jovem Aprendiz, desenvolvendo habilidades técnicas e administrativas, e, desde 2013, atuei como Assessor Técnico na Secretaria de Educação do Estado de São Paulo (SEDUC). Ao longo dessa jornada, fui responsável por processos de extração, transformação e carregamento de dados (ETL), análise e visualização de dados, além de otimizar processos utilizando ferramentas como SQL (SSMS), Excel avançado e Power BI.</p>
+      <p>Atualmente, estou aprimorando minhas habilidades em Python (com foco em Numpy, Pandas, Seaborn, Matplotlib) e técnicas de programação orientada a objetos e análise de dados avançada, aplicando esses conhecimentos para resolver desafios de análise descritiva e tratamento de dados.</p>
+      <p class="about-contact">Vamos conversar sobre como posso contribuir com o seu time: aldivan.vieira@yahoo.com.br</p>
+    </div>
+    <div id="aboutContentEn" style="display:none;">
+      <p>Professional with a solid track record in both the public and private sectors. I started my career as an Apprentice, developing technical and administrative skills, and since 2013 I have worked as a Technical Advisor at the São Paulo State Department of Education (SEDUC). Throughout this journey, I have been responsible for data extraction, transformation, and loading (ETL) processes, data analysis and visualization, and optimizing processes using tools such as SQL (SSMS), advanced Excel, and Power BI.</p>
+      <p>I am currently strengthening my skills in Python (focusing on Numpy, Pandas, Seaborn, Matplotlib) and object-oriented programming techniques and advanced data analysis, applying this knowledge to solve descriptive analysis and data processing challenges.</p>
+      <p class="about-contact">Let's talk about how I can contribute to your team: aldivan.vieira@yahoo.com.br</p>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-filter="todos">Todos</button>
+    <button class="tab" data-filter="profissional">Profissional</button>
+    <button class="tab" data-filter="projeto">Projetos</button>
+    <button class="tab" data-filter="formacao">Formação</button>
+    <button class="tab" data-filter="curso">Cursos</button>
+  </nav>
+
+  <div class="timeline" id="timeline"></div>
+  <div class="empty" id="emptyState" style="display:none;">Nenhum item nessa categoria ainda.</div>
+
+
+
+
+</div>
+
+
+
+<script>
+(function(){
+  const MESES = {jan:0,fev:1,mar:2,abr:3,mai:4,jun:5,jul:6,ago:7,set:8,out:9,nov:10,dez:11};
+
+  const seed = [
+    {id:'p1', tipo:'profissional', org:'Secretaria da Educação do Estado de São Paulo', cargo:'Assessor Técnico III | Centro de Planejamento, Estudos e Análises', inicio:'Set/2013', fim:'Dez/2023', atual:false, dados:true,
+      desc:['Levantamento de requisitos de negócio e tradução em soluções técnicas','Consultas SQL e extração de dados em SQL Server, com uso frequente de tabelas temporárias para montar e validar os dados em etapas','Análise de plano de execução e comparação do tempo das queries antes e depois dos ajustes','ETL com dados de fontes externas (Excel, CSV e arquivos de texto) para o banco de dados e no sentido inverso','Desenvolvimento de dashboards e relatórios em Power BI, com medidas em DAX (CALCULATE, FILTER) e tabela calendário para análises por período','Criação de KPIs para apoio à tomada de decisão','Garantia de qualidade e integridade dos dados'],
+      skills:['SQL','SQL Server','Tabelas Temporárias','Plano de Execução','Power BI','DAX','Tabela Calendário','Excel','ETL','ELT','KPIs','Modelagem de Dados']},
+    {id:'j1', tipo:'projeto', org:'Secretaria da Educação do Estado de São Paulo', cargo:'Unificação e revalidação de dados de disciplinas e edital', inicio:'Set/2013', fim:'', atual:false, periodo:'Durante o cargo na SEDUC',
+      desc:['Assumi um projeto que estava travado e identifiquei a causa: as disciplinas aplicadas em sala de aula e as publicadas no edital não coincidiam','Unifiquei e revalidei os dados, consolidando informações de várias fontes','Atualizei o banco de dados com os dados corretos','Desafios: dados inconsistentes e duplicados, cadastros incompletos ou em formatos diferentes, chaves que nem sempre batiam entre sistemas e definição das regras de negócio com a área','Resultados não divulgados por envolverem políticas públicas'],
+      skills:['SQL Server','Qualidade de Dados','Limpeza e Validação','Integração de Dados']},
+    {id:'p2', tipo:'profissional', org:'42 São Paulo', cargo:'Bolsista – Formação em Tecnologia e Redes', inicio:'Jun/2024', fim:'Jun/2025', atual:false,
+      desc:['Desenvolvimento de competências em programação e lógica','Projetos práticos e resolução de desafios técnicos em equipe'],
+      skills:['Lógica de Programação','Redes','Terminal','Trabalho em Equipe','Resolução de Problemas']},
+    {id:'p3', tipo:'profissional', org:'Gaia Cenografia (Viva Montagens)', cargo:'Auxiliar Cenotécnico e Administrativo', inicio:'Jun/2012', fim:'Jun/2013', atual:false,
+      desc:['Controle de folha de ponto e apoio à folha de pagamento','Suporte à montagem de estandes em feiras e eventos'],
+      skills:['Rotinas Administrativas']},
+    {id:'p4', tipo:'profissional', org:'Dinatecnica', cargo:'Jovem Aprendiz Administrativo', inicio:'Jan/2010', fim:'Jan/2012', atual:false,
+      desc:['Digitalização e controle de projetos técnicos no setor de Engenharia','Suporte a atividades administrativas e de informática'],
+      skills:['Organização de Documentos']},
+    {id:'f1', tipo:'formacao', org:'EBAC – Escola Britânica de Artes Criativas e Tecnologia', cargo:'Formação em Cientista de Dados', inicio:'Jan/2023', fim:'', atual:true, desc:[], skills:['Ciência de Dados','Python']},
+    {id:'f2', tipo:'formacao', org:'42 São Paulo', cargo:'Formação em Tecnologia e Desenvolvimento de Software', inicio:'Jun/2024', fim:'Jun/2025', atual:false, desc:[], skills:[]},
+    {id:'f3', tipo:'formacao', org:'Universidade Anhanguera', cargo:'Tecnologia em Marketing Digital', inicio:'Jun/2020', fim:'Dez/2022', atual:false, desc:[], skills:['Marketing Digital']},
+    {id:'c1', tipo:'curso', org:'EBAC', cargo:'Aplicações do Power BI e SQL Server', inicio:'2023', fim:'2023', atual:false, desc:[], skills:['Power BI','SQL Server']},
+    {id:'c2', tipo:'curso', org:'Grupo Voitto', cargo:'Power BI Aplicado a Negócios', inicio:'2023', fim:'2023', atual:false, desc:[], skills:['Power BI']},
+    {id:'c3', tipo:'curso', org:'Escola Conquer', cargo:'Comunicação e Oratória', inicio:'2021', fim:'2021', atual:false, desc:[], skills:['Comunicação']},
+    {id:'c4', tipo:'curso', org:'Intel', cargo:'Cloud Computing e Trabalho Remoto', inicio:'2014', fim:'2014', atual:false, desc:[], skills:['Cloud Computing']}
+  ];
+
+  let data = [];
+  let currentFilter = 'todos';
+
+  function loadData(){ data = JSON.parse(JSON.stringify(seed)); }
+
+  function parseDate(str){
+    if (!str) return null;
+    str = str.trim().toLowerCase();
+    const m = str.match(/^([a-zç]{3})\/(\d{4})$/);
+    if (m && MESES[m[1]] !== undefined) return new Date(parseInt(m[2]), MESES[m[1]], 1);
+    const y = str.match(/^(\d{4})$/);
+    if (y) return new Date(parseInt(y[1]), 0, 1);
+    return null;
+  }
+
+  function computeKPIs(){
+    const now = new Date();
+    let totalMs = 0, dataMs = 0;
+    data.filter(d => d.tipo === 'profissional').forEach(p => {
+      const st = parseDate(p.inicio);
+      const en = p.atual ? now : parseDate(p.fim);
+      if (st && en && en > st) {
+        totalMs += (en - st);
+        if (p.dados) dataMs += (en - st);
+      }
+    });
+    const msYear = 1000*60*60*24*365.25;
+    const years = totalMs ? Math.floor(totalMs / msYear) + '+' : '–';
+    const dataYears = dataMs ? Math.floor(dataMs / msYear) + '+' : '–';
+    const orgs = new Set(data.map(d => d.org));
+    const skills = new Set();
+    data.forEach(d => (d.skills||[]).forEach(s => skills.add(s.trim().toLowerCase())));
+
+    document.getElementById('kpiYears').textContent = years;
+    document.getElementById('kpiData').textContent = dataYears;
+    document.getElementById('kpiOrgs').textContent = orgs.size;
+    document.getElementById('kpiSkills').textContent = skills.size;
+  }
+
+  function sortedData(){
+    return [...data].sort((a,b) => {
+      const da = parseDate(a.inicio) || new Date(0);
+      const db = parseDate(b.inicio) || new Date(0);
+      return db - da;
+    });
+  }
+
+  function render(){
+    computeKPIs();
+    const tl = document.getElementById('timeline');
+    const empty = document.getElementById('emptyState');
+    const items = sortedData().filter(d => currentFilter === 'todos' || d.tipo === currentFilter);
+    tl.innerHTML = '';
+    if (items.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    const tipoLabel = {profissional:'Profissional', projeto:'Projeto', formacao:'Formação', curso:'Curso'};
+    items.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'entry tipo-' + item.tipo;
+      const period = item.periodo || (item.inicio + (item.atual ? ' – Atual' : (item.fim ? ' – ' + item.fim : '')));
+      const descHtml = (item.desc && item.desc.length)
+        ? '<ul class="entry-desc">' + item.desc.map(d => '<li>'+escapeHtml(d)+'</li>').join('') + '</ul>'
+        : '';
+      const skillsHtml = (item.skills && item.skills.length)
+        ? '<div class="skills">' + item.skills.map(s => '<span class="skill-chip">'+escapeHtml(s)+'</span>').join('') + '</div>'
+        : '';
+      el.innerHTML = `
+        <div class="entry-head">
+          <div>
+            <span class="entry-tipo">${tipoLabel[item.tipo]}</span>
+            <div class="entry-title">${escapeHtml(item.cargo)}</div>
+            <div class="entry-org">${escapeHtml(item.org)}</div>
+          </div>
+          <div class="entry-period">${escapeHtml(period)}</div>
+        </div>
+        ${descHtml}
+        ${skillsHtml}
+      `;
+      tl.appendChild(el);
+    });
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Tabs
+  document.getElementById('tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.tab');
+    if (!btn) return;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+
+  document.getElementById('aboutLangToggle').addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    document.querySelectorAll('#aboutLangToggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const lang = btn.dataset.lang;
+    document.getElementById('aboutContentPt').style.display = lang === 'pt' ? 'block' : 'none';
+    document.getElementById('aboutContentEn').style.display = lang === 'en' ? 'block' : 'none';
+  });
+
+  loadData();
+  render();
+})();
+</script>
+</body>
+</html>
